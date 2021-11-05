@@ -1,3 +1,6 @@
+ :root {
+  overflow-x: hidden;
+ }
  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
   .tpyewirter {
   text-align: center;
@@ -43,14 +46,14 @@
   background-color: rgb(240, 240, 240);
 }
 
-section{
-  background-color: rgb(30,30,30)
+.titlebkg{
+  background-color: #04151F;
 }
 
 .header-mono{
   font-family: monospace;
   text-align: center;
-  color: rgb(0,255,0);
+  color: #D0FCB3;
 }
 
 .section-modern{
