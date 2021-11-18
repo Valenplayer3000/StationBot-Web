@@ -67,7 +67,13 @@
       </div>
       <br>
       <h3>Setting up the StationBot</h3>
-      <p>After cloning the repository. What next? If you run the bot. You will see the error message:</p>
+      <br>
+      <br>
+      <p>After cloning the repository. What next? Run the bot in following commands:</p>
+      <br>
+      <div class="codeblock-normal">node .</div>
+      <br>
+      <p>You will see the error message:</p>
       <img src="../images/Error.png">
       <br>
       <p>You see? You need to install the dependencies called Discord.js!</p>
@@ -82,5 +88,98 @@
         npm i
       </div>
       <br>
+      <h3>Setting up with Config.json</h3>
+      <p>To make the bot works. You need to make a config.json file.</p>
+      <p>Required dependencies:</p>
+      <ul>
+        <li>Vs Code (or other editor)</li>
+        <li>Discord</li>
+        <li>Your Bot Token (discord.com/developers/application)</li>
+      </ul>
+      <br>
+      <p>
+        In order to get the token, you need go head at discod.com/developers/application and create a new application with the name what you want to name.
+      </p>
+      <p>
+        After creating the new application. Select the Bot, and click the button called "Add Bot". And click the copy button (Its copy the bot tokens. Small reminder: Don't share your bot tokens with others, this will make the bot in danger).
+        <br>
+        <br>
+        <h3>Making a Config.json file</h3>
+        <br>
+      </p>
+          After you have a token, now you will create a config.json file. You need to write the next code:
+      <p>
+        <div class="codeblock-large">  {
+            "BOT_TOKEN": "paste your bot token here",
+            "stable": true,
+            "prefix": ",",
+            "branchNext": null,
+            "botVer": "1.2.0 Pre-Release 2",
+          }
+</div>
+  <br>
+  <p>Then save the file and run the following command:</p>
+  <div class="codeblock-normal">node .</div>
+  <br>
+  <h3>Adding new commands and features</h3>
+  <br>
+  <p>
+      Requirement:
+  </p>
+  <ul>
+      <li>Understand JavaScript and Discord.js (Discord Guide available at discordjs.guide)</li>
+      <li>VS Code (or other editor)</li>
+      <li>Ability to understand our StationaryStation's Code (Impossible)</li>
+  </ul>
+  <h3>How to make command</h3>
+  <p>
+    To make a command at your Bot. First you need to create a file with the command name inside the command (./command/put the fiel into the category)
+  </p>
+  <p>
+    After creating the file write the command:
+  </p>
+  <div class="codeblock-large">// Require needed files
+const fetch = require('node-fetch');
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const tenor_key = require('../config.json')
+const search_terms = ['cat', 'dog', 'Team+Fortress+2', 'trackmania', 'minecraft', 'roblox',
+                      'among+us', 'what+the+fuck']
+// Start module/command
+module.exports = {
+    // Command Data
+    data: new SlashCommandBuilder()
+        .setName('random')
+        .setDescription('Sends a random gif'),
+    // Execute when command is sent
+    async aexecute(interaction){
+      if (tenor_key == "" || tenor_key == null ||  !tenor_key) {
+        console.log("Tenor Key invalid, null or missing. Please check your configuration file.")
+        process.exit();
+      }
+        const random_term = Math.floor(Math.random() * search_terms.lenght);
+        const msg = await interaction.reply({content: "Seaching...", fetchReply: true});
+        const { file } = fetch(`https://g.tenor.com/v1/search?q=${random_term}&key=${tenor_key}&limit=8`)
+            .then(response =>
+                response.json()
+            )
+        let randomFile = Math.floor(Math.random * file.results.lenght)
+        msg.editReply({ files:[file[randomFile]]})
+    }
+};
+  <div class="card-normal codeblock-cardfix">Example (Random.js)</div></div>
+  <br>
+  <p>Then save the file and run the following command:</p>
+  <div class="codeblock-normal">node .</div>
+  <p>Now write the following steps:</p>
+  <br>
+  <div class="codeblock-normal">your-prefixes + you-command</div>
+  <p>Now your command work!</p>
+  <br>
+  <br>
+  <br>
+  <h3>Conlusion</h3>
+  <p>Did you read and learned the docs of StationBot? Well now you are officially a developer. Now there come the very final step. In order share your bot into repos.</p>
+  <p>Now you ahead into github or gitlab and create the repos and name your repository. Now put all the files to your repository.</p>
+  <p>Now your completed the documentation. And enjoy your development!</p>
   </body>
 </html>
