@@ -48,7 +48,7 @@
 }
 .card-shadowed{
   background-color: rgb(255, 255, 255);
-  border-radius: 20px;
+  border-radius: 10px;
   transition: all 500ms cubic-bezier(0,0,0,1);
 }
 
@@ -83,13 +83,28 @@ img:hover{
   box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
 }
 
-input[type=search] {
-  width: 300px;
-  -webkit-transition: width 0.4s cubic-bezier(0,0,0,1);
-  transition: width 0.4s cubic-bezier(0,0,0,1);
+iframe{
+  transition: all 0.4s cubic-bezier(0,0,0,1);
 }
 
-/* When the input field gets focus, change its width to 100% */
-input[type=search]:focus {
-  width: 400%;
+iframe:hover{
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+}
+
+.iframe-center{
+  display: flex;
+  margin: auto;
+}
+
+.codeblock-normal{
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 3px;
+  margin-left: 3px;
+  width: 60%;
+  font-family: 'Roboto Mono', sans-serif;
+}
+.codeblock-text-version{
+  color: #EA7600;
 }
