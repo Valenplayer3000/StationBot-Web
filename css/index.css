@@ -74,9 +74,9 @@ span{
   font-family: 'Roboto Mono', monospace;
 }
 img{
-  border-radius: 10px;
-  height:auto;
-  width:auto;
+  border-radius: 5px;
+  height:auto 50%;
+  width:auto 50%;
   transition: all 400ms cubic-bezier(0,0,0,1);
 }
 img:hover{
@@ -99,12 +99,13 @@ iframe:hover{
 .codeblock-normal{
   color: #fff;
   background-color: #000;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   border-radius: 3px;
   margin-left: 3px;
   width: 60%;
   font-family: 'Roboto Mono', sans-serif;
+  transition: all 0.4s cubic-bezier(0,0,0,1);
 }
-.codeblock-text-version{
-  color: #EA7600;
+.codeblock-normal:hover{
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.4);
 }
