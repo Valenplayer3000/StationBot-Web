@@ -29,7 +29,7 @@
       <p class="header">We are working on documentation. You will find issues or mispell with the documentation. Please wait until the documentation is completely ready.</p>
       <br>
       <h3 class="header">Introduction</h3>
-      <p>Welcome to Introduction. Now you will learn how to setup the StationBot.</p>
+      <p>Welcome to Introduction. Now you will learn how to set up the StationBot.</p>
       <br>
       <br>
       <p>To start, you will need:</p>
@@ -40,7 +40,7 @@
       </ul>
       <br>
       <br>
-      <p>After installing. You will need to run following commands:</p>
+      <p>After installing these tools. You will need to run the following commands:</p>
       <div class="codeblock-normal">
         git --version
       </div>
@@ -54,8 +54,8 @@
       </div>
       <br>
       <h3>Cloning the Repository</h3>
-      <p>If you have checked the version what you did before. Now clone the repository</p>
-      <p>You can select the version you want to clone:</p>
+      <p>If you have checked the version of what you did before. Now clone the repository:</p>
+      <p>(You can select the version you want to clone)</p>
       <div class="codeblock-normal">
         git clone https://github.com/stationaryStation/stationBot
         //This is old repository.
@@ -69,15 +69,15 @@
       <h3>Setting up the StationBot</h3>
       <br>
       <br>
-      <p>After cloning the repository. What next? Run the bot in following commands:</p>
+      <p>After cloning the repository. What next? Run the bot in the following commands:</p>
       <br>
       <div class="codeblock-normal">node .</div>
       <br>
       <p>You will see the error message:</p>
       <img src="../images/Error.png">
       <br>
-      <p>You see? You need to install the dependencies called Discord.js!</p>
-      <p>Installing the dependencies is just easy. Write the next commands:</p>
+      <p>Do you see? You need to install the dependencies called Discord.js!</p>
+      <p></p>
       <br>
       <div class="codeblock-normal">
         npm i discordjs
@@ -98,10 +98,10 @@
       </ul>
       <br>
       <p>
-        In order to get the token, you need go head at discod.com/developers/application and create a new application with the name what you want to name.
+        To get the token, you need to go head to discord.com/developers/application and create a new application with the name what you want to name.
       </p>
       <p>
-        After creating the new application. Select the Bot, and click the button called "Add Bot". And click the copy button (Its copy the bot tokens. Small reminder: Don't share your bot tokens with others, this will make the bot in danger).
+        After creating the new application. Select the Bot, and click the button called "Add Bot". And click the copy button (It copies the bot tokens. Small reminder: Don't share your bot tokens with others, this will make the bot in danger).
         <br>
         <br>
         <h3>Making a Config.json file</h3>
@@ -133,40 +133,28 @@
   </ul>
   <h3>How to make command</h3>
   <p>
-    To make a command at your Bot. First you need to create a file with the command name inside the command (./command/put the fiel into the category)
+    To make a command at your Bot. First, you need to create a file with the command name inside the command (./command/put the field into the category)
   </p>
   <p>
     After creating the file write the command:
   </p>
-  <div class="codeblock-large">// Require needed files
-const fetch = require('node-fetch');
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const tenor_key = require('../config.json')
-const search_terms = ['cat', 'dog', 'Team+Fortress+2', 'trackmania', 'minecraft', 'roblox',
-                      'among+us', 'what+the+fuck']
-// Start module/command
-module.exports = {
-    // Command Data
-    data: new SlashCommandBuilder()
-        .setName('random')
-        .setDescription('Sends a random gif'),
-    // Execute when command is sent
-    async aexecute(interaction){
-      if (tenor_key == "" || tenor_key == null ||  !tenor_key) {
-        console.log("Tenor Key invalid, null or missing. Please check your configuration file.")
-        process.exit();
-      }
-        const random_term = Math.floor(Math.random() * search_terms.lenght);
-        const msg = await interaction.reply({content: "Seaching...", fetchReply: true});
-        const { file } = fetch(`https://g.tenor.com/v1/search?q=${random_term}&key=${tenor_key}&limit=8`)
-            .then(response =>
-                response.json()
-            )
-        let randomFile = Math.floor(Math.random * file.results.lenght)
-        msg.editReply({ files:[file[randomFile]]})
-    }
-};
-  <div class="card-normal codeblock-cardfix">Example (Random.js)</div></div>
+  <div class="codeblock-large">module.exports = {
+                              // Command Name
+                              name: "test",
+                              // Command Description
+                              description: "Tests the bot in case of stupid errors",
+                              // Set to true if there isn't arguments in your command
+                              args: true,
+                              // How your command should be used
+                              usage: "<testArg>",
+                              // Command Cooldown
+                              cooldown: 1,
+                              execute(message, args) {
+                              // ...
+                              }
+
+                              }
+  <div class="card-normal codeblock-cardfix">Example command</div></div>
   <br>
   <p>Then save the file and run the following command:</p>
   <div class="codeblock-normal">node .</div>
@@ -178,8 +166,8 @@ module.exports = {
   <br>
   <br>
   <h3>Conlusion</h3>
-  <p>Did you read and learned the docs of StationBot? Well now you are officially a developer. Now there come the very final step. In order share your bot into repos.</p>
-  <p>Now you ahead into github or gitlab and create the repos and name your repository. Now put all the files to your repository.</p>
-  <p>Now your completed the documentation. And enjoy your development!</p>
+  <p>Did you read and learn the docs of StationBot? Well, now you are officially a developer. Now there come the very final step. In order to share your bot into the repository. </p>
+  <p>Now you ahead into GitHub or GitLab and create the repository and name your repository. Now put all the files in your repository.</p>
+  <p>Now you completed the documentation. And enjoy your development!</p>
   </body>
 </html>
