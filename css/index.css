@@ -29,6 +29,10 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+  transition: all 500ms cubic-bezier(0,0,0,1);
+}
+.feather:hover{
+  stroke-width: ;
 }
 .feather-fix-button{
   margin-top: 3px
@@ -57,10 +61,12 @@
 
 .card-shadowed:hover{
   box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
+  
 }
 
 .card-normal:hover{
   background-color: rgb(240, 240, 240);
+  transform: translateY(10px);
 }
 
 .titlebkg{
