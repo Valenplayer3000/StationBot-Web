@@ -167,7 +167,9 @@ iframe:hover{
 
 .img-remove-shadow{
   box-shadow: none;
-  border-radius: 5px;
+  border-radius: 10px;
   height:auto 50%;
   width:auto 50%;
+  max-width: 50%;
+  max-height: 100%;
 }
