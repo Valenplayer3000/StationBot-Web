@@ -11,6 +11,13 @@
     <!-- Page's css -->
     <link rel="stylesheet" href="css/index.css">
 
+    <!-- Service worker and manifest.json -->
+    <link rel="manifest" href="manifest.json">
+    <script>
+     if ('serviceWorker' in navigator) {
+       navigator.serviceWorker.register("/sw.js");
+     }
+    </script> 
     <!-- Javascript -->
     <script src="js/index.js" />
     <script src="js/initicon.js" />
