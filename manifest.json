@@ -1,8 +1,8 @@
 {
-"background_color": "#fff",
+"background_color": "#FF072",
 "display": "standalone",
 "orientation":"portrait",
-"theme_color": "#fff",
+"theme_color": "#FF072",
 "short_name": "StationBot",
 "name": "StationBot",
 "description": "Official StationBot Website right on your phone, tablet or PC.",
