@@ -11,7 +11,8 @@
  *{
    font-family: 'Outfit',sans-serif;
    margin: 0;
-   padding:0;
+   padding:0; 
+   transition: all 500ms cubic-bezier(0,0,0.2,1);
  }
 
   .tpyewirter {
@@ -70,10 +71,10 @@
 .header-mono{
   font-family: 'Roboto Mono', monospace;
   text-align: center;
-  color: #FFFFFF;
+  color: #000000;
 }
 span{
-  color: #EDFF0E;
+  color: #d0df00;
   font-family: 'Roboto Mono', monospace;
 }
 .img{
@@ -137,7 +138,7 @@ iframe:hover{
 }
 
 .titlebkg{
-  background-color: #04151F;
+  background: #f3f3f3;
 }
 
 .modern-section{
@@ -187,15 +188,68 @@ iframe:hover{
 .img-center{
   margin-left: 25%;
 }
-@media only screen and (max-width: 60.74em){
-  .img-remove-shadow{
-    display: none;
-  }
-}
+
 
 .img-shadow{
   border-radius: 20px;
   margin-right: 50px;
   transition: all 500ms cubic-bezier(0,0,0,1);
   box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+}
+
+.pill{
+  background-color: rgb(255, 0, 106);
+  border-radius: 100px;
+  color: white;
+}
+
+
+.nav-sticky{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 35%;
+  margin-top: 10px;
+  z-index: 3;
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.button-color{
+   background-color: var(--color-4);
+}
+
+
+/* Opencalc's Css (Not yet used) */
+ 
+  body[data-theme="light"] {  
+    --color-1: rgb(38, 111, 221)  
+    --color-2: rgb(226, 226, 226);  
+    --color-3: white;
+    --color-4: rgb(32, 49, 124);  
+    }  
+    body[data-theme="dark"] {  
+    --color-1: #1e1f26;  
+    --color-2: #292c33;  
+    --color-3: rgb(39, 40, 42);  
+    --color-4: rgb(97, 108, 255);  
+    }  
+
+/* Windows detection (Made by me) */
+
+@media only screen and (max-width: 65.74em){
+  .img-remove-shadow{
+    display: none;
+  }
+  .nav-sticky{
+    width: 100%;
+    border-radius: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
 }
