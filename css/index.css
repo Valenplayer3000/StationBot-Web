@@ -6,14 +6,66 @@
 
   :root {
     overflow-x: hidden;
+
+    --bg-primary: rgb(31, 31, 31);
+    --bg-secondary: #303030;
+    --bg-secondary-hover: #3b3b3b;
+    --bg-acrylic-primary: rgba(0,0,0,0.3);
+    --accent: rgb(78, 184, 255);
+    --accent-bg: rgb(0, 132, 255);
+    --body-text: white;
+
   }
 
  *{
    font-family: 'Outfit',sans-serif;
+   color: white;
    margin: 0;
    padding:0; 
    transition: all 500ms cubic-bezier(0,0,0.2,1);
  }
+
+ body{
+  background-color: var(--bg-primary);
+  color:white;
+ }
+
+ body::-webkit-scrollbar{
+   width: 0.30rem;
+ }
+
+
+ body::-webkit-scrollbar-track{
+   background: #000;
+ }
+
+ body::-webkit-scrollbar-thumb{
+  background: var(--accent);
+}
+
+/* Items */
+
+.navbar-light .navbar-brand{
+  color: var(--body-text);
+}
+
+.navbar-light .navbar-nav .nav-link.active{
+  color: var(--body-text);
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: var(--body-text);
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+  color: var(--body-text);
+  text-shadow: 0px 0px 10px white;
+}
+
+.navbar-light .navbar-brand:hover{
+  color: var(--body-text);
+  text-shadow: 0px 0px 10px white;
+}
 
   .tpyewirter {
   text-align: center;
@@ -49,29 +101,22 @@
   border-radius: 20px;
 }
 .card-normal{
-  background-color: rgb(255, 255, 255);
+  background-color: var(--bg-secondary);
   transition: all 500ms cubic-bezier(0,0,0,1);
-}
-.card-shadowed{
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-  transition: all 500ms cubic-bezier(0,0,0,1);
-}
-
-.card-shadowed:hover{
-  box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
-  
 }
 
 .card-normal:hover{
-  background-color: rgb(240, 240, 240);
+  background-color: var(--bg-secondary-hover);
 }
 
+.card-dark-text{
+  color: var(--body-text);
+}
 
 .header-mono{
   font-family: 'Roboto Mono', monospace;
   text-align: center;
-  color: #000000;
+  color: var(--body-text);
 }
 span{
   color: #d0df00;
@@ -104,7 +149,6 @@ iframe:hover{
 .codeblock-normal{
   color: #fff;
   background-color: #000;
-  border: 1px solid #fff;
   border-radius: 3px;
   margin-left: 3px;
   width: 600px;
@@ -119,7 +163,6 @@ iframe:hover{
 .codeblock-large{
   color: #fff;
   background-color: #000;
-  border: 1px solid #fff;
   border-radius: 3px;
   margin-left: 3px;
   width: 650px;
@@ -138,11 +181,11 @@ iframe:hover{
 }
 
 .titlebkg{
-  background: #f3f3f3;
+  background: var(--bg-secondary);
 }
 
 .modern-section{
-  background-color: rgb(19, 137, 247);
+  background-color: var(--accent-bg);
   border-radius:    20px 20px 0px 0px ;
 }
 
@@ -214,7 +257,7 @@ iframe:hover{
   margin-left: 35%;
   margin-top: 10px;
   z-index: 3;
-  background: rgba(255,255,255,0.5);
+  background: var(--bg-acrylic-primary);
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   backdrop-filter: blur(10px);
@@ -224,21 +267,6 @@ iframe:hover{
    background-color: var(--color-4);
 }
 
-
-/* Opencalc's Css (Not yet used) */
- 
-  body[data-theme="light"] {  
-    --color-1: rgb(38, 111, 221)  
-    --color-2: rgb(226, 226, 226);  
-    --color-3: white;
-    --color-4: rgb(32, 49, 124);  
-    }  
-    body[data-theme="dark"] {  
-    --color-1: #1e1f26;  
-    --color-2: #292c33;  
-    --color-3: rgb(39, 40, 42);  
-    --color-4: rgb(97, 108, 255);  
-    }  
 
 /* Windows detection (Made by me) */
 
